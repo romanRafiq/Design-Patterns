@@ -1,3 +1,5 @@
+package com.designPattern.behavioral.tests;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -39,7 +41,7 @@ public class IteratorTest {
         for (IIterator it = options.createIterator(); it.hasNext(); ) 
         {
             String name = (String)it.next();
-            System.out.println(name);
+            
             if(counter ==0)
             {
                 Assert.assertEquals(name,"Rafiq");
