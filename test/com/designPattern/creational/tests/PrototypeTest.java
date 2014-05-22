@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.designPattern.creational;
+package com.designPattern.creational.tests;
 
-import com.designPatterns.creational.factory.Animal;
-import com.designPatterns.creational.factory.AnimalFactory;
+import com.designPatterns.creational.prototype.Dog;
+import com.designPatterns.creational.prototype.Person;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -20,26 +20,31 @@ import org.testng.annotations.Test;
  *
  * @author Roman
  */
-public class testFactory {
+public class PrototypeTest {
     
-    public testFactory() {
+    public PrototypeTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
-    //
     @Test
-    public void testfatctory() 
+    public void testPerson()
     {
-        AnimalFactory animalFactory = new AnimalFactory();
+        Person personOne = new Person("Rafiq");
+        Assert.assertEquals(personOne.getName(), "Rafiq");
         
-        //Test If dog
-        Animal animal = animalFactory.getAnimal("dog");                
-        Assert.assertEquals(animal.makeSound(), "Woof");
-        
-        //test if cat
-        animal = animalFactory.getAnimal("cat");
-        Assert.assertEquals(animal.makeSound(), "Meow");
+        //testClone
+        Person personTwo = (Person) personOne.doClone();
+        Assert.assertEquals(personTwo.getName(), "Rafiq");                       
+    }
+    @Test
+    public void testDog()
+    {
+        Dog dogOne = new Dog("Woof");
+        Assert.assertEquals(dogOne.getSound(), "Woof");
+        Dog dogTwo = (Dog) dogOne.doClone();
+        Assert.assertEquals(dogTwo.getSound(), "Woof");
+
     }
 
     @BeforeClass

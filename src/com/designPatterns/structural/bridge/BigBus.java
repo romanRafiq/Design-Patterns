@@ -20,7 +20,7 @@ public class BigBus extends Vehicle{
     @Override
     public void drive() {
         
-        System.out.println("\nThe big bus is rollin'");
+       
         int horsepower = engine.go();
         reportOnSpeed(horsepower);
     }

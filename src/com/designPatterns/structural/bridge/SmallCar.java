@@ -18,7 +18,7 @@ public class SmallCar extends Vehicle{
     }
     @Override
     public void drive() {
-       System.out.println("\nThe small car is driving");
+       
         int horsepower = engine.go();
         reportOnSpeed(horsepower);
     }
