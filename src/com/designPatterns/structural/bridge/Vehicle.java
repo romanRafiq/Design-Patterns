@@ -27,13 +27,11 @@ public abstract class Vehicle {
     public void reportOnSpeed(int horsepower) {
          ratio = weightInKgs / horsepower;
 
-        if (ratio < 3) {
-            System.out.println("It's going fast!");
-        } else if ((ratio >= 3) && (ratio < 8)) {
-            System.out.println("It's moving at average Joe speed!");
-        } else {
-            System.out.println("It's moving like a turtle!");
-        }
+       /* ***Ratio****
+         ratio < 3 = It's going fast;
+         ratio >= 3 && ratio < 8 = average speed
+         else  = It's moving like a turtle!");
+        */
         
     }
     public int getRatio()

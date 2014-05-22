@@ -41,7 +41,7 @@ public class BridgeTest {
         vehicle.setEngine(new BigEngine());//Give bus a big engine
         vehicle.drive();
         Assert.assertEquals(vehicle.getRatio(),8);
-        System.out.println("Ratio"+vehicle.getRatio());
+        
      }
       @Test
      public void TestSmallVehicle() 
