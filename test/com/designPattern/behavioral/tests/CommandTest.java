@@ -6,11 +6,11 @@
 
 package com.designPattern.behavioral.tests;
 
-import com.designPatterns.behavioral.Command.Agent;
-import com.designPatterns.behavioral.Command.BuyStockOrder;
-import com.designPatterns.behavioral.Command.Order;
-import com.designPatterns.behavioral.Command.SellStockOrder;
-import com.designPatterns.behavioral.Command.StockTrade;
+import com.designPatterns.behavioral.command.Agent;
+import com.designPatterns.behavioral.command.BuyStockOrder;
+import com.designPatterns.behavioral.command.Order;
+import com.designPatterns.behavioral.command.SellStockOrder;
+import com.designPatterns.behavioral.command.StockTrade;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
