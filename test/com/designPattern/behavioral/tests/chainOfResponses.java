@@ -1,4 +1,4 @@
-package com.designPattern.behavioral;
+package com.designPattern.behavioral.tests;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
