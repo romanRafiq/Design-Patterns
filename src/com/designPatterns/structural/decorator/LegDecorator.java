@@ -18,15 +18,14 @@ public class LegDecorator extends AnimalDecorator{
     }
 
     @Override
-    public void describe() {
-        animal.describe();
-        System.out.println("I have legs");
-        walk();
+    public String describe() {
+        animal.describe();        
+        return walk();
     }
     
-    public void walk()
+    public String walk()
     {
-        System.out.println("I can walk");
+       return "I can walk";
     }    
     
 }

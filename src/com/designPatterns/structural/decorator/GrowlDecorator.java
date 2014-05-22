@@ -18,14 +18,14 @@ public class GrowlDecorator extends AnimalDecorator {
     }
 
     @Override
-    public void describe() {
-        animal.describe();;
-        growl();
+    public String describe() {
+        animal.describe();
+        return growl();
     }
     
-    public void growl()
+    public String growl()
     {
-        System.out.println("Grrr");
+        return "Grrr";
     }
     
 }

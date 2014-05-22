@@ -11,5 +11,7 @@ package com.designPatterns.structural.decorator;
  * @author Roman
  */
 public interface Animal {
-    public void describe();
+    //public void describe();
+    
+    public String describe();
 }
