@@ -35,7 +35,7 @@ public abstract class Expression {
       }
 
       while(context.getInput().startsWith(one()))
-      {//If there are "I"s then this will be like 
+      {//If there are "I"s then this will be like to add all the ones nd until find a new roman number
         context.setOutput(context.getOutput() + (1 * multiplier()));
         context.setInput(context.getInput().substring(1));
       }
