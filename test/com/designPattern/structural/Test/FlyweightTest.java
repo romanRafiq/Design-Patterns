@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.designPattern.structural;
+package com.designPattern.structural.Test;
 
-import com.designPatterns.structural.facade.Facade;
+import com.designPatterns.structural.flyweight.FlyWeightFactory;
+import com.designPatterns.structural.flyweight.Flyweight;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -19,27 +20,27 @@ import org.testng.annotations.Test;
  *
  * @author Roman
  */
-public class FacadeTesting {
+public class FlyweightTest {
     
-    public FacadeTesting() {
+    public FlyweightTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-    public void testCubeX() 
+    public void TestIt()
     {
-        Facade facade = new Facade();
-        int a = 5;//TestVariable
         
-        //Cube of a
-        Assert.assertEquals(facade.cubeX(a),125);
-        //Cube of a *2
-        Assert.assertEquals(facade.cubeXTimesTwo(a),250);
-        //a to sixth power * 2
-        Assert.assertEquals(facade.inceptionTime(a),31250);
-
+        //Create new Obejct
+        FlyWeightFactory flyweightFactory = FlyWeightFactory.getInstance();
+       
+         Flyweight flyweightAdder = flyweightFactory.getFlyweight("add");
+         Assert.assertEquals(flyweightAdder.doMath(8, 8),16);
+         
+         Flyweight flyweightMultiplier = flyweightFactory.getFlyweight("multiply");
+         Assert.assertEquals(flyweightMultiplier.doMath(10, 7),70);
+                  
     }
 
     @BeforeClass

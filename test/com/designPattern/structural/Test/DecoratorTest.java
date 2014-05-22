@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.designPattern.structural;
+package com.designPattern.structural.Test;
 
 import com.designPatterns.structural.decorator.Animal;
 import com.designPatterns.structural.decorator.GrowlDecorator;

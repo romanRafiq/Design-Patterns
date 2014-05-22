@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.designPattern.structural;
+package com.designPattern.structural.Test;
 
-import com.designPatterns.structural.flyweight.FlyWeightFactory;
-import com.designPatterns.structural.flyweight.Flyweight;
+import com.designPatterns.structural.proxy.FastThing;
+import com.designPatterns.structural.proxy.Proxy;
+import com.designPatterns.structural.proxy.SlowThing;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -20,27 +21,24 @@ import org.testng.annotations.Test;
  *
  * @author Roman
  */
-public class FlyweightTest {
+public class ProxyTest {
     
-    public FlyweightTest() {
+    public ProxyTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-    public void TestIt()
+    public void testProxy() 
     {
+        Proxy proxy = new Proxy();
+        FastThing fastThing = new FastThing();
+
+         Assert.assertEquals(fastThing.sayHello(),"FastThing");        
         
-        //Create new Obejct
-        FlyWeightFactory flyweightFactory = FlyWeightFactory.getInstance();
-       
-         Flyweight flyweightAdder = flyweightFactory.getFlyweight("add");
-         Assert.assertEquals(flyweightAdder.doMath(8, 8),16);
-         
-         Flyweight flyweightMultiplier = flyweightFactory.getFlyweight("multiply");
-         Assert.assertEquals(flyweightMultiplier.doMath(10, 7),70);
-                  
+        proxy.sayHello();        
+        Assert.assertEquals(proxy.sayHello(),"SlowThing");
     }
 
     @BeforeClass

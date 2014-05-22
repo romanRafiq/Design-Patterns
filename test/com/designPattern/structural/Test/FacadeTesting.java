@@ -4,11 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.designPattern.structural;
+package com.designPattern.structural.Test;
 
-import com.designPatterns.structural.proxy.FastThing;
-import com.designPatterns.structural.proxy.Proxy;
-import com.designPatterns.structural.proxy.SlowThing;
+import com.designPatterns.structural.facade.Facade;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -21,24 +19,27 @@ import org.testng.annotations.Test;
  *
  * @author Roman
  */
-public class ProxyTest {
+public class FacadeTesting {
     
-    public ProxyTest() {
+    public FacadeTesting() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-    public void testProxy() 
+    public void testCubeX() 
     {
-        Proxy proxy = new Proxy();
-        FastThing fastThing = new FastThing();
-
-         Assert.assertEquals(fastThing.sayHello(),"FastThing");        
+        Facade facade = new Facade();
+        int a = 5;//TestVariable
         
-        proxy.sayHello();        
-        Assert.assertEquals(proxy.sayHello(),"SlowThing");
+        //Cube of a
+        Assert.assertEquals(facade.cubeX(a),125);
+        //Cube of a *2
+        Assert.assertEquals(facade.cubeXTimesTwo(a),250);
+        //a to sixth power * 2
+        Assert.assertEquals(facade.inceptionTime(a),31250);
+
     }
 
     @BeforeClass
