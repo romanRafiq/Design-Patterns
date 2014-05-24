@@ -50,21 +50,22 @@ public class VisitorTest {
         numberElements.add(two1);
 	numberElements.add(two2);
 	numberElements.add(three1);
-        
-        
+                
         //Create instance of a class Referancing the sumVisitor()
 	NumberVistor sumVisitor = new SumVisitor();        
 	
-        //we visit the list with the SumVisitor
-        sumVisitor.visit(numberElements);	
-	         
+        //This visit the list with the SumVisitor
+        sumVisitor.visit(numberElements);
+        
         //create a TotalSumVisitor 
         TotalSumVistor totalSumVisitor = new TotalSumVistor();
 	
+        //This visit the list with the TotalSumVisitor
         totalSumVisitor.visit(numberElements);//visit the list with the TotalSumVisitor
 	
         //get TotalSum and test is       
         Assert.assertEquals(totalSumVisitor.getTotalSum(),27);//the test should be 27
+                
 
     }
 

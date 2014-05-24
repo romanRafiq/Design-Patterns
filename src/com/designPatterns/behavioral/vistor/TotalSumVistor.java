@@ -18,15 +18,13 @@ public class TotalSumVistor implements NumberVistor{
         
     @Override
     public void visit(TwoElement twoElement) {
-        int sum = twoElement.a + twoElement.b;
-        System.out.println("Adding " + twoElement.a + "+" + twoElement.b + "=" + sum + " to total");
+        int sum = twoElement.a + twoElement.b;        
         totalSum += sum;
     }
 
     @Override
     public void visit(ThreeElement threeElement) {
-        int sum = threeElement.a + threeElement.b + threeElement.c;
-        System.out.println("Adding " + threeElement.a + "+" + threeElement.b + "+" + threeElement.c + "=" + sum + " to total");
+        int sum = threeElement.a + threeElement.b + threeElement.c;        
         totalSum += sum;
     }
 

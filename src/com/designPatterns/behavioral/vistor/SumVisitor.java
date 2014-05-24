@@ -17,15 +17,12 @@ public class SumVisitor implements NumberVistor{
     @Override
     public void visit(TwoElement twoElement) {
         
-        int sum = twoElement.a + twoElement.b;
-        //Display or return a value
-        System.out.println(twoElement.a + "+" + twoElement.b + "=" + sum);
+        int sum = twoElement.a + twoElement.b;              
     }
 
     @Override
     public void visit(ThreeElement threeElement) {
-        int sum = threeElement.a + threeElement.b + threeElement.c;
-        System.out.println(threeElement.a + "+" + threeElement.b + "+" + threeElement.c + "=" + sum);
+        int sum = threeElement.a + threeElement.b + threeElement.c;       
     }
 
     @Override
