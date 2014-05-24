@@ -11,5 +11,5 @@ package com.designPatterns.behavioral.observer;
  * @author Roman
  */
 public interface WeatherObsserver {
-    public void doUpdate(int temperature);//updating the temp
+    public String doUpdate(int temperature);//updating the temp
 }

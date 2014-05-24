@@ -13,10 +13,10 @@ package com.designPatterns.behavioral.observer;
 public class WeatherCustomer2 implements WeatherObsserver{
 
     @Override
-    public void doUpdate(int temperature) {
+    public String doUpdate(int temperature) {
         //Notify customer
         //Send out messages
-        System.out.println("Weather customer 2 just found out the temperature is:" + temperature);
+         return "nofitied on update";
     }
     
 }
