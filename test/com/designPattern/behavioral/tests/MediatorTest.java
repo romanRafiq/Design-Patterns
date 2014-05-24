@@ -34,15 +34,29 @@ public class MediatorTest {
     @Test
     public void Testmediator()
     {
+        //This test is a bidding app where uses the loop to like add more to the bidding to 
+        //to find a value the bidder will accept
+        
+        //object
         Mediator mediator = new Mediator();
         
         Buyer swedishBuyer = new SwedishBuyer(mediator);
-        Buyer frenchBuyer = new FrenchBuyer(mediator);
-        
-        float sellingPriceInDollars = 10.0f;
-        
-        AmericanSeller americanSeller = new AmericanSeller(mediator,sellingPriceInDollars);
-        DollarConverter dollarConverter = new DollarConverter(mediator);
+	Buyer frenchBuyer = new FrenchBuyer(mediator);
+	float sellingPriceInDollars = 10.0f;
+	AmericanSeller americanSeller = new AmericanSeller(mediator, sellingPriceInDollars);
+	DollarConverter dollarConverter = new DollarConverter(mediator);
+
+	float swedishBidInKronor = 55.0f;
+	while (!swedishBuyer.attemptToPurchase(swedishBidInKronor)) 
+        {
+		swedishBidInKronor += 15.0f;
+	}
+
+	float frenchBidInEuros = 3.0f;
+	while (!frenchBuyer.attemptToPurchase(frenchBidInEuros)) 
+        {
+		frenchBidInEuros += 1.5f;
+	}
     }
 
     @BeforeClass

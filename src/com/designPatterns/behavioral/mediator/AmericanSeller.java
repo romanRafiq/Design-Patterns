@@ -26,12 +26,12 @@ public class AmericanSeller {
     {
           if(bidInDollars >= priceInDollars)
           {
-              System.out.println("Selling accepts the bid of "+ bidInDollars+ " dollars\n snn" );
+              System.out.println("Selling accepts the bid of "+ bidInDollars+ " dollars\n " );
               return true;
           }
           else
           {
-              System.out.println("Seller rejects the bid of"+ bidInDollars+ " dollars\n snn" );
+              System.out.println("Seller rejects the bid of "+ bidInDollars+ " dollars\n " );
               return false;
           }                                
     }
