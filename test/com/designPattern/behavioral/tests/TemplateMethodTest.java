@@ -9,6 +9,7 @@ package com.designPattern.behavioral.tests;
 import com.designPatterns.behavioral.templateMethod.HamburgerMeal;
 import com.designPatterns.behavioral.templateMethod.Meal;
 import com.designPatterns.behavioral.templateMethod.TacoMeal;
+import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -32,14 +33,17 @@ public class TemplateMethodTest {
     public void TestMeal()
     {
         //Make a hambuger meal
-        Meal meal1 = new HamburgerMeal();
-	meal1.doMeal(); //now eat the burger
-
-	System.out.println();
+        Meal meal1 = new HamburgerMeal();        
+	meal1.doMeal(); //now eat the burger        	                
 
         //Make Taco meal
 	Meal meal2 = new TacoMeal();//Make meal object and implement TacoMeal()
-	meal2.doMeal();//eat
+                
+	Assert.assertEquals(meal2.doMeal(),"had meal");//Perform All Abtstracts()
+        //Show that the eat method awas override
+        Assert.assertEquals(meal1.eat(),"eating");
+        Assert.assertEquals(meal2.eat(),"Mmm leka");
+        Assert.assertNotEquals(meal2.eat(),"eating");
     }
 
     @BeforeClass

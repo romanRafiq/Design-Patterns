@@ -13,21 +13,23 @@ package com.designPatterns.behavioral.templateMethod;
 public abstract class Meal {
     
     //template method
-    public final void doMeal()
+    public final String doMeal()
     {
         prepareIngredients();
         cook();
         eat();
         cleanUp();
+        
+        return "had meal";
     }
     
     public abstract void prepareIngredients();
     public abstract void cook();
     public abstract void cleanUp();
     
-    public void eat()//This method will be implemented throughout the classes
+    public String eat()//This method will be implemented throughout the classes
     {
-        System.out.println("Mmm, thats leka");
+        return "eating";
     }
     
 }

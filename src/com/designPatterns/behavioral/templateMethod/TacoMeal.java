@@ -16,21 +16,24 @@ public class TacoMeal extends Meal{
 
     @Override
     public void prepareIngredients() {
-        System.out.println("Getting ground beef and shells");
+        //perform a function here or diplay something
+        //System.out.println("Getting ground beef and shells");
     }
 
     @Override
     public void cook() {
-        System.out.println("Cooking ground beef in pan");
+        //perform a function here or diplay something
+        //System.out.println("Cooking ground beef in pan");
     }
 
     @Override
     public void cleanUp() {
-        System.out.println("Doing the dishes");
+        //perform a function here or diplay something
+        //System.out.println("Doing the dishes");
     }
     @Override//Override the eat method from the Meal class
-    public void eat() {
-        System.out.println("The tacos are tasty");
+    public String eat() {
+         return "Mmm leka";
     }
     
 }
