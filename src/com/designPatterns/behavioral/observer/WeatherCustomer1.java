@@ -14,11 +14,20 @@ package com.designPatterns.behavioral.observer;
 //WeatherCustomer1 is an observer that implements WeatherObserver
 public class WeatherCustomer1 implements WeatherObsserver{
 
+    //variable to perform a test
+    int temperature =0;
+    
+    
     @Override
-    public String doUpdate(int temperature) {
+    public void doUpdate(int temperature) {
         //Notify customer
         //Send out messages
-        return "nofitied on update";
+        this.temperature = temperature;
+    }
+     //I used it for testing purposes
+    public int getTemperature()
+    {
+        return temperature;
     }
     
 }

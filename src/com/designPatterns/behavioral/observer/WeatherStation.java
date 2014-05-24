@@ -48,12 +48,12 @@ public class WeatherStation implements WeatherSubject{
             
             weatherObserver.doUpdate(temperature);//
         }
+        
     }
     
     //other methods
     public void setTemperature(int newTemperature) //setting of temperature
-    {
-        System.out.println("\nWeather station setting temperature to " + newTemperature);
+    {       
 	temperature = newTemperature;//assign new temp to old temp
 	
         doNotify();//notifies every observer

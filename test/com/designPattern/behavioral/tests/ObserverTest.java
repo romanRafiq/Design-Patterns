@@ -9,6 +9,7 @@ package com.designPattern.behavioral.tests;
 import com.designPatterns.behavioral.observer.WeatherCustomer1;
 import com.designPatterns.behavioral.observer.WeatherCustomer2;
 import com.designPatterns.behavioral.observer.WeatherStation;
+import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -35,14 +36,33 @@ public class ObserverTest {
 		
 	WeatherCustomer1 cust1 = new WeatherCustomer1();
 	WeatherCustomer2 cust2 = new WeatherCustomer2();
-	weatherStation.addObserver(cust1);
+        WeatherCustomer2 cust3 = new WeatherCustomer2();
+	
+        //Add customers(objects) to the a list
+        weatherStation.addObserver(cust1);
 	weatherStation.addObserver(cust2);
+        weatherStation.addObserver(cust3);
+
 
 	weatherStation.setTemperature(34);
-	
-	weatherStation.removeObserver(cust1);
-		
+        //See if the 2 customer(objects) were notified
+        Assert.assertEquals(cust1.getTemperature(),34);
+        Assert.assertEquals(cust2.getTemperature(),34);
+	Assert.assertEquals(cust3.getTemperature(),34);
+        
+	weatherStation.removeObserver(cust1);//removing a customer                
 	weatherStation.setTemperature(35);
+        
+        Assert.assertEquals(cust2.getTemperature(),35);//Proves that the value was updated
+        Assert.assertNotEquals(cust2.getTemperature(),34);
+        
+        Assert.assertEquals(cust3.getTemperature(),35);//Proves that the value was updated
+        
+        //The following proves that a customer was deleted from the list
+        //And its value of temp wasnt notified of the temp change
+         Assert.assertEquals(cust1.getTemperature(),34);
+        
+        
     }
 
     @BeforeClass
