@@ -13,6 +13,6 @@ package com.designPatterns.structural.proxy;
 public class FastThing extends Thing{
     public FastThing()
     {
-        
+        //Allow this method
     }
 }

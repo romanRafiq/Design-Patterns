@@ -18,7 +18,7 @@ public class Proxy {
     
     public Proxy()
     {
-        System.out.println("Creating proxy at " + new Date());
+        
     }
     
     public String sayHello() {
