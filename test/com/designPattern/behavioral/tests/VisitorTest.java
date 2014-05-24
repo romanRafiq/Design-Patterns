@@ -10,8 +10,11 @@ import com.designPatterns.behavioral.vistor.NumberElement;
 import com.designPatterns.behavioral.vistor.SumVisitor;
 import com.designPatterns.behavioral.vistor.ThreeElement;
 import com.designPatterns.behavioral.vistor.TwoElement;
+import com.designPatterns.behavioral.vistor.NumberVistor;
+import com.designPatterns.behavioral.vistor.TotalSumVistor;
 import java.util.ArrayList;
 import java.util.List;
+import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -35,23 +38,33 @@ public class VisitorTest {
     public void TestVisitor() 
     {
         
+        //Mave objects and initialize
 	TwoElement two1 = new TwoElement(3, 3);
 	TwoElement two2 = new TwoElement(2, 7);
 	ThreeElement three1 = new ThreeElement(3, 4, 5);
 
+        //Create a list with class datatype
 	List<NumberElement> numberElements = new ArrayList<NumberElement>();
-	numberElements.add(two1);
+	
+        //Add objects to list
+        numberElements.add(two1);
 	numberElements.add(two2);
 	numberElements.add(three1);
-
-	System.out.println("Visiting element list with SumVisitor");
-	NumberVisitor sumVisitor = new SumVisitor();
-	sumVisitor.visit(numberElements);
-
-	System.out.println("\nVisiting element list with TotalSumVisitor");
-	TotalSumVisitor totalSumVisitor = new TotalSumVisitor();
-	totalSumVisitor.visit(numberElements);
-	System.out.println("Total sum:" + totalSumVisitor.getTotalSum());
+        
+        
+        //Create instance of a class Referancing the sumVisitor()
+	NumberVistor sumVisitor = new SumVisitor();        
+	
+        //we visit the list with the SumVisitor
+        sumVisitor.visit(numberElements);	
+	         
+        //create a TotalSumVisitor 
+        TotalSumVistor totalSumVisitor = new TotalSumVistor();
+	
+        totalSumVisitor.visit(numberElements);//visit the list with the TotalSumVisitor
+	
+        //get TotalSum and test is       
+        Assert.assertEquals(totalSumVisitor.getTotalSum(),27);//the test should be 27
 
     }
 

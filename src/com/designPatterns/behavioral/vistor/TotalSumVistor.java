@@ -18,7 +18,7 @@ public class TotalSumVistor implements NumberVistor{
         
     @Override
     public void visit(TwoElement twoElement) {
-        int sum = twoElement.a = + twoElement.b;
+        int sum = twoElement.a + twoElement.b;
         System.out.println("Adding " + twoElement.a + "+" + twoElement.b + "=" + sum + " to total");
         totalSum += sum;
     }
