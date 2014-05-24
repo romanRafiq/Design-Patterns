@@ -25,13 +25,11 @@ public class AmericanSeller {
     public boolean isBidAccepted(float bidInDollars)
     {
           if(bidInDollars >= priceInDollars)
-          {
-              System.out.println("Selling accepts the bid of "+ bidInDollars+ " dollars\n " );
+          {              
               return true;
           }
           else
-          {
-              System.out.println("Seller rejects the bid of "+ bidInDollars+ " dollars\n " );
+          {           
               return false;
           }                                
     }
